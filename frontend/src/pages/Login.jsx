@@ -7,7 +7,7 @@ import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
-  const [Password, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -63,20 +63,22 @@ const Login = () => {
 
           <div className="input-group">
             <Lock size={20} />
-            <input
-  type="password"
+           
+  
+          <input
+  type={showPassword ? "text" : "password"}
+  name="password"
   placeholder="Password"
-  value={password}
-  onChange={(e) => setPassword(e.target.value)}
+  value={form.password}
+  onChange={handleChange}
   style={{
     background: "#fff",
-    color: "#000",   //  THIS FIX
+    color: "#000",
     padding: "10px",
     borderRadius: "6px",
     border: "1px solid #ccc",
     width: "100%"
   }}
-  
 />
 
 
@@ -84,7 +86,7 @@ const Login = () => {
               className="eye-icon"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {Password ? <EyeOff size={20} /> : <Eye size={20} />}
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </span>
           </div>
 
