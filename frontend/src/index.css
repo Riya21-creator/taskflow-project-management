@@ -496,3 +496,25 @@ input {
     background: white;
     color: black;
 }
+
+.login-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+    /* dark text */
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    /* grey */
+    margin-bottom: 20px;
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
