@@ -1,16 +1,23 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
   const { user, logoutUser } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const hideNavbarRoutes = ["/login", "/signup"];
+
+  if (hideNavbarRoutes.includes(location.pathname)) {
+    return null;
+  }
+
+  if (!user) return null;
 
   const handleLogout = () => {
     logoutUser();
     navigate("/login");
   };
-
-  if (!user) return null;
 
   return (
     <nav className="navbar">
