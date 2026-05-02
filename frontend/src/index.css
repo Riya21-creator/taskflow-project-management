@@ -448,15 +448,22 @@ code {
     cursor: pointer;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+}
+
 .nav-links {
     display: flex;
+    gap: 25px;
+    /* THIS FIXES YOUR ISSUE */
     align-items: center;
-    gap: 24px;
-    /* THIS CREATES SPACE */
 }
 
 .nav-links a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-weight: 500;
 }
@@ -467,7 +474,6 @@ code {
 
 .role {
     color: #9ca3af;
-    font-size: 14px;
 }
 
 .nav-links button {
@@ -477,4 +483,9 @@ code {
     padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
+}
+
+input {
+    background: white;
+    color: black;
 }

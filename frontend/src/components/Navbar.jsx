@@ -1,37 +1,27 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 import "../index.css";
-  const Navbar = () => {
-  const { user, logoutUser } = useAuth();
-  const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logoutUser();
-    navigate("/login");
-  };
-
-  if (!user) return null;
-
+const Navbar = ({ user, logoutUser }) => {
   return (
     <nav className="navbar">
-      <h2>TaskFlow</h2>
+      <h2 className="logo">TaskFlow</h2>
 
-    <div className="nav-links">
-  <Link to="/dashboard">Dashboard</Link>
-  <Link to="/projects">Projects</Link>
-  <Link to="/my-tasks">My Tasks</Link>
+      <div className="nav-links">
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/projects">Projects</Link>
+        <Link to="/my-tasks">My Tasks</Link>
 
-  {user?.role === "Admin" && (
-    <>
-      <Link to="/create-project">Create Project</Link>
-      <Link to="/create-task">Create Task</Link>
-    </>
-  )}
+        {user?.role === "Admin" && (
+          <>
+            <Link to="/create-project">Create Project</Link>
+            <Link to="/create-task">Create Task</Link>
+          </>
+        )}
 
-  <span className="role">{user?.role}</span>
+        <span className="role">{user?.role}</span>
 
-  <button onClick={logoutUser}>Logout</button>
-</div>
+        <button onClick={logoutUser}>Logout</button>
+      </div>
     </nav>
   );
 };
