@@ -49,7 +49,9 @@ const Login = () => {
       <div className="auth-right">
         <form className="auth-card" onSubmit={handleSubmit}>
           <h2 className="login-title">Welcome Back 👋</h2>
-<p className="login-subtitle">Sign in to continue managing your projects</p>
+          <p className="login-subtitle">
+            Sign in to continue managing your projects
+          </p>
 
           <div className="input-group">
             <Mail size={20} />
@@ -64,24 +66,13 @@ const Login = () => {
 
           <div className="input-group">
             <Lock size={20} />
-           
-  
-          <input
-  type={showPassword ? "text" : "password"}
-  name="password"
-  placeholder="Password"
-  value={form.password}
-  onChange={handleChange}
-  style={{
-    background: "#fff",
-    color: "#000",
-    padding: "10px",
-    borderRadius: "6px",
-    border: "1px solid #ccc",
-    width: "100%"
-  }}
-/>
-
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Password"
+              value={form.password}
+              onChange={handleChange}
+            />
 
             <span
               className="eye-icon"
@@ -90,6 +81,15 @@ const Login = () => {
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </span>
           </div>
+
+          <p
+            className="forgot-password"
+            onClick={() =>
+              toast.info("Password reset feature will be added in future update")
+            }
+          >
+            Forgot Password?
+          </p>
 
           <button type="submit" disabled={loading}>
             {loading ? "Logging in..." : "Login"}
