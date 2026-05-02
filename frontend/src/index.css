@@ -447,3 +447,34 @@ code {
     border-radius: 8px;
     cursor: pointer;
 }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    /* THIS CREATES SPACE */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #60a5fa;
+}
+
+.role {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.nav-links button {
+    background: #2563eb;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
